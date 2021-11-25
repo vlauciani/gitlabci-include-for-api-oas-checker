@@ -4,11 +4,12 @@ api-oas-checker:
     INCLUDE_OPENAPI_BASEDIR: "default"
     INCLUDE_OPENAPI_FILENAME: "default"
   script:
+    - OPENAPI_FULLDIR="$(pwd)/${INCLUDE_OPENAPI_BASEDIR}"
     - echo "INCLUDE_OPENAPI_BASEDIR=${INCLUDE_OPENAPI_BASEDIR}"
     - echo "INCLUDE_OPENAPI_FILENAME=${INCLUDE_OPENAPI_FILENAME}"
-    - echo "FULL=$(pwd)/${INCLUDE_OPENAPI_BASEDIR}"
+    - echo "OPENAPI_FULLDIR=${OPENAPI_FULLDIR}"
     - ls -l $(pwd)/${INCLUDE_OPENAPI_DIR}
-    - docker run --rm --entrypoint=sh -v $(pwd)/${INCLUDE_OPENAPI_BASEDIR}:/tmp stoplight/spectral:5.9.1 -c "spectral lint -r https://italia.github.io/api-oas-checker/spectral.yml /tmp/${INCLUDE_OPENAPI_FILENAME}"
+    - docker run --rm --entrypoint=sh -v ${OPENAPI_FULLDIR}:/tmp stoplight/spectral:5.9.1 -c "spectral lint -r https://italia.github.io/api-oas-checker/spectral.yml /tmp/${INCLUDE_OPENAPI_FILENAME}"
   #after_script:
   #  - docker images    
 
