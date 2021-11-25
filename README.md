@@ -17,7 +17,7 @@ include:
   - remote: 'https://raw.githubusercontent.com/vlauciani/gitlabci-include-for-api-oas-checker/main/api-oas-checker.yml'
 
 variables:
-  INCLUDE_OPENAPI_DIR: "/home/user/myapp/public
+  INCLUDE_OPENAPI_DIR: "/home/user/myapp/public"
   INCLUDE_OPENAPI_FILENAME: "openapi.yml"
     
 stages:
