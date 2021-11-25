@@ -1,2 +1,2 @@
-# gitlabci-include-for-api-oas-checker
-.gitlab-ci.yml include-for-api-oas-checker
+# OpenApi Spec 'include', for `.gitlab-ci.yml`
+OpenApi Spec 'include', for `.gitlab-ci.yml`
