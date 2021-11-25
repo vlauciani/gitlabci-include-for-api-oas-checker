@@ -1,5 +1,5 @@
 api-oas-checker:
-  extends: .dind
+  extends: .dind2
   variables:
     INCLUDE_OPENAPI_DIR: "default"
     INCLUDE_OPENAPI_FILENAME: "default"
@@ -8,7 +8,7 @@ api-oas-checker:
   #after_script:
   #  - docker images    
 
-.dind:
+.dind2:
   image: 
     name: docker:19.03.2
     #entrypoint: [""]
