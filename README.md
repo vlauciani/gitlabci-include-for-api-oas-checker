@@ -6,8 +6,8 @@
 This snippet can be included in GitLab CI to check *Open-Api-Specification*.
 
 In your `.gitlab-ci.yml` file, remeber to set varaibles:
-- `INCLUDE_OPENAPI_DIR` 
-- `INCLUDE_OPENAPI_FILENAME`
+- `OAS_BASEDIR` 
+- `OAS_FILENAME`
 
 ### Example
 
@@ -17,8 +17,8 @@ include:
   - remote: 'https://raw.githubusercontent.com/vlauciani/gitlabci-include-for-api-oas-checker/main/api-oas-checker.yml'
 
 variables:
-  OPENAPI_DIR: "/home/user/myapp/public"
-  OPENAPI_FILENAME: "openapi.yml"
+  OAS_DIR: "/home/user/myapp/public"
+  OAS_FILENAME: "openapi.yml"
     
 stages:
   - . . .
@@ -28,8 +28,8 @@ stages:
 api-oas-checker:
     stage: api-oas-checker_stage
     variables:
-      INCLUDE_OPENAPI_DIR: ${OPENAPI_DIR}
-      INCLUDE_OPENAPI_FILENAME: ${OPENAPI_FILENAME}
+      INCLUDE_OAS_BASEDIR: ${OAS_DIR}
+      INCLUDE_OAS_FILENAME: ${OAS_FILENAME}
 ```
 
 ## Contribute
