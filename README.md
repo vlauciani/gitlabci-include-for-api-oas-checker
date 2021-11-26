@@ -1,3 +1,5 @@
+[![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/vlauciani/gitlabci-include-for-api-oas-checker/blob/main/LICENSE)
+
 # OpenApi Spec 'include', for `.gitlab-ci.yml`
 *Open-Api-Specification* `include:` directive, for `.gitlab-ci.yml`
 
