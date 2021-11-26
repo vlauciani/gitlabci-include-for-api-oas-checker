@@ -1,5 +1,5 @@
 # OpenApi Spec 'include', for `.gitlab-ci.yml`
-*Open-Api-Specification* 'include', for `.gitlab-ci.yml`
+*Open-Api-Specification* `include:` directive, for `.gitlab-ci.yml`
 
 ## Usage
 
