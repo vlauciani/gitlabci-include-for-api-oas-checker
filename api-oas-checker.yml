@@ -6,7 +6,9 @@ api-oas-checker:
   script:
     - OAS_FULLDIR="$(pwd)/${INCLUDE_OAS_BASEDIR}"
     - if [ ! -f ${OAS_FULLDIR}/${INCLUDE_OAS_FILENAME} ]; then echo " File ${INCLUDE_OAS_BASEDIR}/${INCLUDE_OAS_FILENAME} not found!" && exit 1; fi
-    - docker run --rm --entrypoint=sh -v ${OAS_FULLDIR}:/tmp stoplight/spectral:5.9.1 -c "spectral lint -r https://raw.githubusercontent.com/vlauciani/gitlabci-include-for-api-oas-checker/main/spectral_v1.1.yml /tmp/${INCLUDE_OAS_FILENAME}"
+    #- docker run --rm --entrypoint=sh -v ${OAS_FULLDIR}:/tmp stoplight/spectral:5.9.1 -c "spectral lint -r https://raw.githubusercontent.com/vlauciani/gitlabci-include-for-api-oas-checker/main/spectral_v1.1.yml /tmp/${INCLUDE_OAS_FILENAME}"
+    # Bypass `servers-descrition` rule. Issue: https://github.com/italia/api-oas-checker-rules/issues/41
+    - docker run --rm --entrypoint=sh -v ${OAS_FULLDIR}:/tmp stoplight/spectral:5.9.1 -c "spectral lint -r https://raw.githubusercontent.com/vlauciani/gitlabci-include-for-api-oas-checker/main/spectral_v1.1_without_servers-rule.yml /tmp/${INCLUDE_OAS_FILENAME}"
   #after_script:
   #  - docker images    
 
